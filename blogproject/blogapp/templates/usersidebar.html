@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+  <title>Dashboard &mdash; Stisla
+
+  </title>
+  <link rel="stylesheet" href="{% static 'modules/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'modules/ionicons/css/ionicons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'modules/fontawesome/web-fonts-with-css/css/fontawesome-all.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'modules/summernote/summernote-lite.css' %}">
+  <link rel="stylesheet" href="{% static 'modules/flag-icon-css/css/flag-icon.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+      <div class="main-sidebar">
+        <aside id="sidebar-wrapper">
+          <div class="sidebar-brand">
+            <a href="index.html">Stisla Lite</a>
+          </div>
+          <div class="sidebar-user">
+            <div class="sidebar-user-picture">
+              <img alt="image" src="{% static 'img/avatar/avatar-1.jpeg' %}">
+            </div>
+            <div class="sidebar-user-details">
+              <div class="user-name">  {{ request.session.name }} </div>
+              <div class="user-role">
+                {{  request.session.email }}
+              </div>
+            </div>
+          </div>
+          <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="active">
+              <a href="/homepage/"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+            </li>
+
+            <li class="menu-header">More</li>
+             <li>
+              <a href="/edituserprofile/{{request.session.id}}" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Edit Profile</span></a>
+            </li>
+            <li>
+              <a href="/postblog/" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Publish New Blog</span></a>
+            </li>
+            <li>
+              <a href="/viewblog/" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>Explore Blogs</span></a>
+            </li>
+
+              <li>
+              <a href="/userpostedblogs/" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span>My Blogs</span></a>
+            </li>
+
+          </ul>
+          <div class="p-3 mt-4 mb-4">
+            <a href="/" class="btn btn-danger btn-shadow btn-round has-icon has-icon-nofloat btn-block">
+              <i class="ion ion-help-buoy"></i><div>Log Out!</div>
+            </a>
+          </div>
+        </aside>
+      </div>
+
+</body>

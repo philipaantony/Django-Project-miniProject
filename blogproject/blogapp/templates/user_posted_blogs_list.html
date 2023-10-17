@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include "usersidebar.html" %}
+<body>
+
+      <div class="main-content">
+        <section class="section">
+          <h1 class="section-header">
+            <div>My Blogs</div>
+          </h1>
+
+
+    {% for i in a %}
+          <div>
+            <div>
+              <div class="card">
+                <div class="card-header">
+                  <div class="float-right">
+                  </div>
+                   <li class="media">
+
+                      <div class="media-body">
+                           <div class="float-right"><a href="/deleteBlog/{{i.id}}" class="btn btn-danger">Delete</a> </div>
+                           <div class="float-right"><a href="/editblog/{{i.id}}" class="btn btn-info">Edit</a> </div>
+
+
+                          <h5><b>Title : {{ i.blogtitle }}</b></h5><br>
+                          <h6>{{ i.blogcontent }}</h6>
+                      </div>
+                    </li>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+         {% endfor %}
+</body>
+</html>

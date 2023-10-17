@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include "adminsidebar.html" %}
+<body><br>
+ <div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+            <div class="login-brand">
+              Update Details
+            </div>
+
+            <div class="card card-primary">
+              <div class="card-header"><h4>Edit</h4></div>
+
+              <div class="card-body">
+            <center>
+                <form method="post" enctype="multipart/form-data" class="needs-validation"  class="" action="/updateuserform/">
+                {% csrf_token %}
+
+                    {{form.as_div}}
+                    <br>
+                <input class="user-input-btn" type="submit" value="UPDATE">
+                </form>
+            </center>
+         </div>
+    </div>
+    </div>
+    </div>
+</div>
+        <div>
+    </section>
+</body>
+</html>
